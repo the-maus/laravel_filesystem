@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class FileController extends Controller
 {
@@ -23,5 +24,16 @@ class FileController extends Controller
         // saves to private folder also
         Storage::disk('local')->put('file2.txt', 'File 2 content');
 
+        return redirect()->route('home');
+    }
+
+    public function storageLocalAppend()
+    {
+        Storage::append('file3.txt', Str::random(100));
+
+        // specifying disk
+        Storage::disk('local')->append('file3.txt', Str::random(100));
+
+        return redirect()->route('home');
     }
 }

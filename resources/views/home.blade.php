@@ -7,6 +7,7 @@
             <hr>
             <div class="d-flex gap-5">
                 <a href="{{ route('storage.local.create') }}" class="btn btn-primary">Create File on Local Storage</a>
+                <a href="{{ route('storage.local.append') }}" class="btn btn-primary">Add Content to File on Local Storage</a>
             </div>
         </div>
     </div>

@@ -7,3 +7,4 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', [FileController::class, 'index'])->name('home');
 
 Route::get('/storage-local-create', [FileController::class, 'storageLocalCreate'])->name('storage.local.create');
+Route::get('/storage-local-append', [FileController::class, 'storageLocalAppend'])->name('storage.local.append');
