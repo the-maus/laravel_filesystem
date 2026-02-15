@@ -93,4 +93,25 @@ class FileController extends Controller
         echo '<pre>';
         print_r($data);
     }
+
+    public function listFiles()
+    {
+        $files = Storage::files(); // default folder (private)
+        // $files = Storage::disk('public')->files();
+        // $files = Storage::files('my-files'); // from: private/my-files
+
+        echo '<pre>';
+        print_r($files);
+
+        $directories = Storage::directories(); // list folders on private folder
+
+        echo '<pre>';
+        print_r($directories);
+
+        $directories = Storage::files(null, true); // list files on folder and on subfolders
+
+        echo '<pre>';
+        print_r($directories);
+
+    }
 }
