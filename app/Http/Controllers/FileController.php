@@ -65,4 +65,32 @@ class FileController extends Controller
 
         echo Storage::missing('file1.txt') ? 'Doesnt exist' : 'Exists';
     }
+
+    public function storeJson()
+    {
+        $data = [
+            [
+                'name'  => 'João',
+                'email' => 'joao@gmail.com'
+            ],
+            [
+                'name'  => 'Ana',
+                'email' => 'ana@gmail.com'
+            ],
+            [
+                'name'  => 'Carlos',
+                'email' => 'carlos@gmail.com'
+            ],
+        ];
+
+        Storage::put('data.json', json_encode($data));
+        echo 'JSON file created';
+    }
+
+    public function readJson()
+    {
+        $data = Storage::json('data.json'); // no need to json_decode
+        echo '<pre>';
+        print_r($data);
+    }
 }

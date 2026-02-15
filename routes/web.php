@@ -11,3 +11,5 @@ Route::get('/storage-local-append', [FileController::class, 'storageLocalAppend'
 Route::get('/storage-local-read', [FileController::class, 'storageLocalRead'])->name('storage.local.read');
 Route::get('/storage-local-read-multi', [FileController::class, 'storageLocalReadMulti'])->name('storage.local.read-multi');
 Route::get('/storage-local-check-file', [FileController::class, 'storageLocalCheckFile'])->name('storage.local.check-file');
+Route::get('/storage-local-store-json', [FileController::class, 'storeJson'])->name('storage.local.store-json');
+Route::get('/storage-local-read-json', [FileController::class, 'readJson'])->name('storage.local.read-json');
