@@ -180,10 +180,10 @@ class FileController extends Controller
         // $request->file('file')->store('uploads');
 
         // saving to storage/app/public/uploads
-        $request->file('file')->store('uploads', 'public');
+        // $request->file('file')->store('uploads', 'public');
 
         // to save with original file name
-        $request->file('file')->storeAs('', $request->file('file')->getClientOriginalName(), 'public');
+        $request->file('file')->storeAs('uploads', $request->file('file')->getClientOriginalName(), 'public');
     
         echo 'File send successfully';
     }
