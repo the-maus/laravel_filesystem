@@ -24,6 +24,24 @@
                 <a href="{{ route('storage.local.list-files-metadata') }}" class="btn btn-primary">List files with metadata</a>
                 <a href="{{ route('storage.local.list-for-download') }}" class="btn btn-primary">Downloads</a>
             </div>
+
+            <div>
+                <p class="display-6">File Upload</p>
+                <form action="{{ route('storage.local.upload') }}" method="post" enctype="multipart/form-data">
+                    
+                    @csrf
+
+                    <div class="mb-3">
+                        <label for="file" class="form-label">File</label>
+                        <input type="file" class="form-control" id="file" name="file">
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary px-5">Send</button>
+                    </div>
+
+                </form>
+            </div>
         </div>
     </div>
 </x-main-layout>

@@ -170,4 +170,21 @@ class FileController extends Controller
 
         return view('list-files-for-download', compact('files'));
     }
+
+    public function uploadFile(Request $request)
+    {
+        // save file storage/app/private
+        // $request->file('file')->store();
+
+        // save file storage/app/private/uploads
+        // $request->file('file')->store('uploads');
+
+        // saving to storage/app/public/uploads
+        $request->file('file')->store('uploads', 'public');
+
+        // to save with original file name
+        $request->file('file')->storeAs('', $request->file('file')->getClientOriginalName(), 'public');
+    
+        echo 'File send successfully';
+    }
 }
