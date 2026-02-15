@@ -16,6 +16,7 @@
                 <a href="{{ route('storage.local.store-json') }}" class="btn btn-primary">Save JSON</a>
                 <a href="{{ route('storage.local.read-json') }}" class="btn btn-primary">Read JSON</a>
                 <a href="{{ route('storage.local.list') }}" class="btn btn-primary">List Files</a>
+                <a href="{{ route('storage.local.delete') }}" class="btn btn-primary">Remove file</a>
             </div>
         </div>
     </div>

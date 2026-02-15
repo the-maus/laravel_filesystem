@@ -114,4 +114,13 @@ class FileController extends Controller
         print_r($directories);
 
     }
+
+    public function deleteFile()
+    {
+        Storage::delete('file1.txt');
+        echo 'File removed successfully';
+
+        // remove all files
+        // Storage::delete(Storage::files()); //or you could pass an array of filepaths
+    }
 }
