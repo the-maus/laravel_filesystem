@@ -183,8 +183,17 @@ class FileController extends Controller
         // $request->file('file')->store('uploads', 'public');
 
         // to save with original file name
-        $request->file('file')->storeAs('uploads', $request->file('file')->getClientOriginalName(), 'public');
+        // $request->file('file')->storeAs('uploads', $request->file('file')->getClientOriginalName(), 'public');
     
+
+        // ----------------------------------------------------------------------------------------
+        // upload with validation
+        $request->validate([
+            'file' => 'required|mimes:pdf,jpg,png|max:100' //in Kb
+        ]);
+
+        $request->file('file')->storeAs('uploads', $request->file('file')->getClientOriginalName(), 'public');
+
         echo 'File send successfully';
     }
 }

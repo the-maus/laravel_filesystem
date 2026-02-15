@@ -34,6 +34,9 @@
                     <div class="mb-3">
                         <label for="file" class="form-label">File</label>
                         <input type="file" class="form-control" id="file" name="file">
+                        @error('file')
+                            <div class="text-danger">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="text-end">
