@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -133,5 +134,22 @@ class FileController extends Controller
     public function deleteFolder()
     {
         Storage::deleteDirectory('documents');
+    }
+
+    public function listFilesWithMetadata()
+    {
+        $fileList = Storage::allFiles();
+
+        $files = [];
+        foreach ($fileList as $file) {
+            $files[] = [
+                'name' => $file,
+                'size' => round(Storage::size($file) / 1024, 22) . ' Kb',
+                'last_modified' => Carbon::createFromTimestamp(Storage::lastModified($file))->format('d-m-Y H:i:s'),
+                'mime_type' => Storage::mimeType($file)
+            ];
+        }
+
+        return view('list-files-with-metadata', compact('files'));
     }
 }

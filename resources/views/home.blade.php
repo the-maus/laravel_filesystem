@@ -21,6 +21,7 @@
             <div class="d-flex gap-5 mt-5">
                 <a href="{{ route('storage.local.create-folder') }}" class="btn btn-primary">Create folder</a>
                 <a href="{{ route('storage.local.delete-folder') }}" class="btn btn-primary">Remove folder</a>
+                <a href="{{ route('storage.local.list-files-metadata') }}" class="btn btn-primary">List files with metadata</a>
             </div>
         </div>
     </div>

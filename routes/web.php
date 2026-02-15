@@ -19,3 +19,5 @@ Route::get('/storage-local-delete', [FileController::class, 'deleteFile'])->name
 // folders
 Route::get('/storage-local-create-folder', [FileController::class, 'createFolder'])->name('storage.local.create-folder');
 Route::get('/storage-local-delete-folder', [FileController::class, 'deleteFolder'])->name('storage.local.delete-folder');
+
+Route::get('/storage-local-list-files-with-metadata', [FileController::class, 'listFilesWithMetadata'])->name('storage.local.list-files-metadata');
