@@ -11,6 +11,9 @@
                 <a href="{{ route('storage.local.read') }}" class="btn btn-primary">Read Content on Local Storage</a>
                 <a href="{{ route('storage.local.read-multi') }}" class="btn btn-primary">Read Content with Multiple Lines</a>
             </div>
+            <div class="d-flex gap-5 mt-5">
+                <a href="{{ route('storage.local.check-file') }}" class="btn btn-primary">Check if File exists</a>
+            </div>
         </div>
     </div>
 </x-main-layout>

@@ -10,3 +10,4 @@ Route::get('/storage-local-create', [FileController::class, 'storageLocalCreate'
 Route::get('/storage-local-append', [FileController::class, 'storageLocalAppend'])->name('storage.local.append');
 Route::get('/storage-local-read', [FileController::class, 'storageLocalRead'])->name('storage.local.read');
 Route::get('/storage-local-read-multi', [FileController::class, 'storageLocalReadMulti'])->name('storage.local.read-multi');
+Route::get('/storage-local-check-file', [FileController::class, 'storageLocalCheckFile'])->name('storage.local.check-file');
