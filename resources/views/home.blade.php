@@ -18,6 +18,10 @@
                 <a href="{{ route('storage.local.list') }}" class="btn btn-primary">List Files</a>
                 <a href="{{ route('storage.local.delete') }}" class="btn btn-primary">Remove file</a>
             </div>
+            <div class="d-flex gap-5 mt-5">
+                <a href="{{ route('storage.local.create-folder') }}" class="btn btn-primary">Create folder</a>
+                <a href="{{ route('storage.local.delete-folder') }}" class="btn btn-primary">Remove folder</a>
+            </div>
         </div>
     </div>
 </x-main-layout>

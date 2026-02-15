@@ -123,4 +123,15 @@ class FileController extends Controller
         // remove all files
         // Storage::delete(Storage::files()); //or you could pass an array of filepaths
     }
+
+    public function createFolder()
+    {   
+        Storage::makeDirectory('documents');
+        Storage::makeDirectory('documents/test');
+    }
+
+    public function deleteFolder()
+    {
+        Storage::deleteDirectory('documents');
+    }
 }
